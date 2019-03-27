@@ -53,41 +53,41 @@ public class Controller extends AppCompatActivity{
                 return true;
             }
         });
-        /* Left button detection*/
+        /* up Left button detection*/
         L_button.setOnTouchListener(new View.OnTouchListener() {
-            TCP_comm left_tcp = new TCP_comm();
+            TCP_comm up_left_tcp = new TCP_comm();
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                left_tcp.TCP_send("L\0", entered_ip, port, event.getAction());
+                up_left_tcp.TCP_send("L\0", entered_ip, port, event.getAction());
                 return true;
             }
         });
 
-        /* RIGHT button detection */
+        /* up RIGHT button detection */
         R_button.setOnTouchListener(new View.OnTouchListener() {
-            TCP_comm right_tcp = new TCP_comm();
+            TCP_comm up_right_tcp = new TCP_comm();
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                right_tcp.TCP_send("R\0", entered_ip, port, event.getAction());
+                up_right_tcp.TCP_send("R\0", entered_ip, port, event.getAction());
                 return true;
             }
         });
         /* down RIGHT button detection */
         down_rigth_button.setOnTouchListener(new View.OnTouchListener() {
-            TCP_comm right_tcp = new TCP_comm();
+            TCP_comm down_right_tcp = new TCP_comm();
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                right_tcp.TCP_send("BR\0", entered_ip, port, event.getAction());
+                down_right_tcp.TCP_send("BR\0", entered_ip, port, event.getAction());
                 return true;
             }
         });
 
-        /* down RIGHT button detection */
+        /* down LEFT button detection */
         down_left_button.setOnTouchListener(new View.OnTouchListener() {
-            TCP_comm right_tcp = new TCP_comm();
+            TCP_comm down_left_tcp = new TCP_comm();
             @Override
             public boolean onTouch(View v, MotionEvent event) {
-                right_tcp.TCP_send("BL\0", entered_ip, port, event.getAction());
+                down_left_tcp.TCP_send("BL\0", entered_ip, port, event.getAction());
                 return true;
             }
         });
