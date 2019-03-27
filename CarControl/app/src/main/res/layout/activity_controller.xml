@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".Controller">
+
+    <Button
+        android:id="@+id/up_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:translationX="140dp"
+        android:translationY="125dp"
+        android:text="▲"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+    <Button
+        android:id="@+id/down_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/up_button"
+        android:translationX="140dp"
+        android:translationY="175dp"
+        android:layout_marginTop="100dp"
+        android:text="▼"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+    <Button
+        android:id="@+id/up_left_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:translationY="175dp"
+        android:translationX="30dp"
+        android:text="◤"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+    <Button
+        android:id="@+id/up_rigth_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:translationY="175dp"
+        android:translationX="245dp"
+        android:text="◥"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+    />
+
+    <Button
+        android:id="@+id/end_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/up_button"
+        android:translationX="140dp"
+        android:translationY="375dp"
+
+        android:text="END" />
+    <Button
+        android:id="@+id/down_rigth_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:translationY="275dp"
+        android:translationX="245dp"
+        android:text="◢"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+    />
+
+    <Button
+        android:id="@+id/down_left_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:translationY="275dp"
+        android:translationX="30dp"
+        android:text="◣"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"/>
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_above="@id/editText"
+        android:translationY="50dp"
+        android:layout_centerHorizontal="true"
+        android:text="WELCOME TO CAR CONTROL"
+        android:textAppearance="@style/TextAppearance.AppCompat.Large"
+        android:textColor="#FFA200"
+        tools:text="WELCOME TO CAR CONTROL" />
+
+</RelativeLayout>

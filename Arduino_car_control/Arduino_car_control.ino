@@ -1,4 +1,5 @@
 #include <avr/io.h>
+#include <string.h>
 //#include <util/delay.h>
 //#include <avr/interrupt.h>
 
@@ -20,22 +21,29 @@ void setup() {
 void loop() {  
 	if (Serial.available() > 0) {
 		
-		delay(100);
+		delay(5);
 		length = Serial.available();
 		Serial.readBytes(command, length);
 		command[length] = '\0';
-		Serial.println(command);
+		Serial.print(command);
 		PORTB = check_command(command);		
 	}
 }
-/*
-	Function that checks what command was sent from esp8266
-	Input parameter is "String command", and that string is being deciphered
+/**
+ *	Function that checks what command was sent from esp8266
+ *	Input parameter is "String command", and that string is being deciphered
 */
 byte check_command (char *command){
-	if (command[0] == 'F')
+	if (command[0] == 'F'){		
 		return 0x01;
-	else if (command[0] == 'B')
+	}
+	else if (command[0] == 'B' && command[1] == 'L'){		
+		return 0x06;
+	}
+	else if (command[0] == 'B' && command[1] == 'R'){		
+		return 0x0A;
+	}
+	else if (command[0] == 'B')		
 		return 0x02;
 	else if (command[0] == 'L')
 		return 0x05;
