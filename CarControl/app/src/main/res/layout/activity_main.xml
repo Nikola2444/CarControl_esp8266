@@ -14,7 +14,7 @@
         android:layout_centerHorizontal="true"
         android:layout_centerVertical="true"
         android:onClick="ClickMe"
-        android:text="Button" />
+        android:text="DONE" />
 
     <EditText
         android:id="@+id/editText"

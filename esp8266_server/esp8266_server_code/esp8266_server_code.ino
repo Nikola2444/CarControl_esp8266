@@ -2,11 +2,9 @@
 
 const char* ssid = "room888";
 const char* password = "cetrness";
-const char* host = "IP OF THE ESP8266"; //it will tell you the IP once it starts up
-                                        //just write it here afterwards and upload
-
-
-WiFiServer server(301); //just pick any port number you like
+const char* host = "IP OF THE ESP8266"; 
+                                        
+WiFiServer server(301); 
 WiFiClient client;
 int wait_var = 0;
 void setup() {
@@ -18,28 +16,16 @@ void setup() {
 	/*
 		wifi initialization
  */
-  //Serial.println(WiFi.localIP());
   
-  //Serial.print("Connecting to ");
-  //Serial.println(ssid);
-
   WiFi.begin(ssid, password);
 
   while (WiFi.status() != WL_CONNECTED) {
-    delay(500);
-    //Serial.print(".");
+    delay(500);    
   }
-  //Serial.println("");
-  //Serial.println("WiFi connected");
   /* 
 		 Start the server 
 	*/
-  server.begin();
-  //Serial.println("Server started");
-  /* 
-		 Print the IP address 
-	*/
-  //Serial.println(WiFi.localIP());
+  server.begin();  
   
   
 }
@@ -52,26 +38,22 @@ void loop() {
 	*/
 	if (!client){
     while (!client) {
-      client = server.available();
-      //Serial.println("waiting");
+      client = server.available();      
     }
-    delay(100);
-    //Serial.println("connected to client");
+    delay(100);    
   }
-  /* 
+  /*
 		 Wait until client sends some data 
 	*/
 	while (!client.available()) {
-    
-    //Serial.println("waiting for client");
+        
     if(wait_var++ == 5){
       client.stop();
       wait_var = 0;
     }
     delay(1);
     return;
-  }
-  //Serial.print("Client sent:");	
+  }  
   /* 
 		 Read the first line of the request and send it to arduino
 	*/

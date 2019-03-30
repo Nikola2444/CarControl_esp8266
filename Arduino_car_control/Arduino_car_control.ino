@@ -1,8 +1,4 @@
 #include <avr/io.h>
-#include <string.h>
-//#include <util/delay.h>
-//#include <avr/interrupt.h>
-
 
 char command[10];
 byte length = 0;
